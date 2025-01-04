@@ -1,0 +1,12 @@
+steps:
+  - label: ":test_tube: Run Tests"
+    command: "./scripts/run-tests.sh"
+    agents:
+      queue: "default"
+
+  - wait
+
+  - label: ":docker: Build Docker Image"
+    command: "./scripts/build-docker.sh"
+    agents:
+      queue: "default"
